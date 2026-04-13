@@ -53,6 +53,7 @@ Every question regardless of type must have:
 | `id` | Yes | Unique integer. Must be sequential starting from 1 |
 | `type` | Yes | One of the 5 type values listed below |
 | `question` | Yes | The question text shown to the user |
+| `explanation` | No | Shown to the user after they submit their answer, for any question type. Explain why the answer is correct. Highly recommended for learning purposes. |
 
 ---
 
@@ -73,7 +74,6 @@ The user picks True or False.
 | Field | Required | Value |
 |---|---|---|
 | `answer` | Yes | `true` or `false` (boolean, no quotes) |
-| `explanation` | No | A sentence or two explaining why the answer is correct. Shown to the user after they submit. Highly recommended for learning purposes. |
 
 ---
 
@@ -219,4 +219,4 @@ questions:
 - `answers` (select-all) must all exactly match items in `options`
 - `type` must be one of: `true-false`, `multiple-choice`, `select-all`, `fill-blank`, `matching`
 - Do not put any content below the closing `---`
-- Always include `explanation` on `true-false` questions — it helps the user understand why
+- Always include `explanation` on every question — it helps the user understand why the answer is correct

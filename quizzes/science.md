@@ -21,24 +21,28 @@ questions:
     question: "What is the chemical symbol for gold?"
     options: ["Go", "Gd", "Au", "Ag"]
     answer: "Au"
+    explanation: "Au comes from the Latin word 'Aurum' meaning gold. Ag (silver) comes from 'Argentum', and other symbols like Fe (iron) and Pb (lead) also derive from Latin, which is why they don't match the English names."
 
   - id: 4
     type: multiple-choice
     question: "How many bones are in the adult human body?"
     options: ["206", "196", "215", "178"]
     answer: "206"
+    explanation: "Adults have 206 bones, but babies are born with around 270–300. Many bones fuse together during childhood and adolescence. The femur (thigh bone) is the longest and strongest bone in the body."
 
   - id: 5
     type: select-all
     question: "Which of these are noble gases?"
     options: ["Helium", "Oxygen", "Neon", "Nitrogen", "Argon"]
     answers: ["Helium", "Neon", "Argon"]
+    explanation: "Noble gases (Group 18) are odourless, colourless, and very chemically inert — they rarely react with other elements. Helium, Neon, and Argon are all noble gases. Oxygen and Nitrogen are reactive gases that make up most of Earth's atmosphere."
 
   - id: 6
     type: fill-blank
     question: "The powerhouse of the cell is the ___."
     answer: "mitochondria"
     accept: ["mitochondria", "Mitochondria"]
+    explanation: "Mitochondria produce ATP (adenosine triphosphate) through cellular respiration — the process of converting glucose and oxygen into usable energy. They have their own DNA, which supports the theory that they were once independent bacteria absorbed by larger cells."
 
   - id: 7
     type: matching
@@ -52,4 +56,5 @@ questions:
         right: "Relativity"
       - left: "Curie"
         right: "Radioactivity"
+    explanation: "Isaac Newton described gravity in 1687. Charles Darwin published On the Origin of Species in 1859. Albert Einstein published the theory of relativity in 1905. Marie Curie coined the term 'radioactivity' and was the first person to win two Nobel Prizes."
 ---

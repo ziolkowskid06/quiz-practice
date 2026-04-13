@@ -64,7 +64,7 @@ export default function QuizRunner({ quiz, backHref }) {
   function handleAnswer(userAnswer) {
     const correct = checkAnswer(current, userAnswer);
     const correctAnswer = getCorrectAnswer(current);
-    const explanation = current.type === 'true-false' ? (current.explanation ?? null) : null;
+    const explanation = current.explanation ?? null;
     setFeedback({ correct, correctAnswer, explanation });
     setResults((prev) => [...prev, { question: current.question, correct, correctAnswer }]);
   }
