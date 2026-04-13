@@ -2,6 +2,11 @@
 
 A personal quiz practice web app built with Next.js and deployed on Vercel. Quizzes are plain Markdown files — no database, no login required.
 
+- **Live app:** https://quiz-practice.vercel.app
+- **GitHub:** https://github.com/ziolkowskid06/quiz-practice
+
+---
+
 ## Running locally
 
 ```bash
@@ -11,102 +16,59 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+---
+
 ## How it works
 
-- **Home page** — shows all available quizzes as cards. Filter by topic using the chips at the top.
+- **Home page** — all quizzes as cards, filterable by topic using the chips at the top
 - **Topic page** — after selecting a quiz, choose a question type (True/False, Multiple Choice, etc.)
-- **Quiz runner** — questions are shuffled on every run. You get immediate feedback after each answer.
-- **Score summary** — see your total score and review every question at the end.
+- **Quiz runner** — questions and answer options are shuffled on every run; immediate feedback after each answer
+- **Score summary** — total score and per-question review at the end; retake with a new shuffle
 
-## Creating a new quiz
-
-1. Create a new file in `/quizzes/` named `<your-topic>.md`
-2. Fill in the frontmatter following the format below
-3. Save — the quiz appears on the home page instantly (no code changes needed)
-
-### Quiz file format
-
-```yaml
 ---
-title: "My Quiz Title"
-topic: "Category Name"    # groups quizzes under the same filter chip
-description: "Short description shown on the card."
-emoji: "🎯"               # emoji shown on the home page tile
-questions:
-  # ... (see question types below)
----
-```
 
-### Question types
+## Managing quizzes
 
-#### True or False
-```yaml
-- id: 1
-  type: true-false
-  question: "The Earth orbits the Sun."
-  answer: true
-  explanation: "Optional — explain why the answer is true or false. Shown after submission."
-```
+**Add a quiz** — create a new `.md` file in `/quizzes/` and push. It appears on the home page automatically.
 
-#### Multiple Choice
-```yaml
-- id: 2
-  type: multiple-choice
-  question: "What is the capital of Japan?"
-  options: ["Beijing", "Seoul", "Tokyo", "Bangkok"]
-  answer: "Tokyo"
-```
+**Remove a quiz** — delete its `.md` file from `/quizzes/` and push.
 
-#### Select All That Apply
-```yaml
-- id: 3
-  type: select-all
-  question: "Which of these are planets?"
-  options: ["Mars", "Pluto", "Venus", "Andromeda"]
-  answers: ["Mars", "Venus"]
-```
-
-#### Fill in the Blank
-```yaml
-- id: 4
-  type: fill-blank
-  question: "The capital of Australia is ___."
-  answer: "Canberra"
-  accept: ["canberra", "Canberra"]   # list every spelling/casing you want to accept
-```
-
-#### Matching
-```yaml
-- id: 5
-  type: matching
-  question: "Match each country to its capital."
-  pairs:
-    - left: "Germany"
-      right: "Berlin"
-    - left: "Italy"
-      right: "Rome"
-    - left: "Spain"
-      right: "Madrid"
-```
+For the full file format and all question type specifications see **[QUIZ_FORMAT.md](./QUIZ_FORMAT.md)**.
 
 ### Tips
 
-- You can mix all question types in one file — the quiz runner groups them by type on the type-selection screen.
-- Questions and answer options are shuffled automatically on every run.
-- The `explanation` field only applies to `true-false` questions. Leave it out for other types.
-- If multiple quizzes share the same `topic` value they all appear under the same filter chip on the home page. This is useful for series (e.g. multiple books under `topic: "Books"`).
+- You don't need all 5 question types in every file — include only the ones relevant to your content
+- Quizzes sharing the same `topic` value group under one filter chip (useful for series, e.g. multiple books under `topic: "Books"`)
+- Always add an `explanation` to `true-false` questions — it helps understand why the answer is correct
+- Questions and answer options are shuffled automatically on every run — no need to randomise them manually
+
+---
+
+## Current quizzes
+
+| File | Topic |
+|---|---|
+| `animals.md` | Nature |
+| `food.md` | Food |
+| `geography.md` | Geography |
+| `history.md` | History |
+| `javascript.md` | Programming |
+| `math.md` | Math |
+| `movies.md` | Entertainment |
+| `music.md` | Music |
+| `science.md` | Science |
+| `space.md` | Space |
+| `sports.md` | Sports |
+| `test-quiz.md` | General |
+
+---
 
 ## Deployment
 
-The app is connected to Vercel via GitHub. Every push to `master` redeploys automatically.
+Connected to Vercel via GitHub — every push to `master` redeploys automatically.
 
 ```bash
 git add .
 git commit -m "your message"
 git push
 ```
-
-- GitHub: https://github.com/ziolkowskid06/quiz-practice
-- Vercel dashboard: https://vercel.com/dashboard
-
-**Removing a quiz:** delete the `.md` file from `/quizzes/` and push.

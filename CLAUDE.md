@@ -11,9 +11,56 @@ npm run start     # Start production server
 git push          # Auto-deploys via Vercel (connected to GitHub)
 ```
 
+## Project links
+
+- **Live app:** https://quiz-practice.vercel.app
+- **GitHub:** https://github.com/ziolkowskid06/quiz-practice
+- **Vercel dashboard:** https://vercel.com/dashboard
+
+---
+
 ## Architecture
 
 **Stack:** Next.js 16 (App Router) · JavaScript · Tailwind CSS v4 · gray-matter
+
+### Routing (3 levels)
+
+```
+/                          → Home: all quizzes, filter chips by topic
+/quiz/[slug]               → Topic page: quiz type selection tiles
+/quiz/[slug]/[type]        → Quiz runner for a specific type within a quiz
+```
+
+### Data flow
+
+- `/lib/parseQuiz.js` — all file I/O. Key exports:
+  - `getAllQuizzes()` — metadata for all `.md` files (home page)
+  - `getQuizMeta(slug)` — metadata + `types[]` + `typeCounts{}` (topic page)
+  - `getQuizBySlugAndType(slug, type)` — questions filtered to one type (quiz runner)
+- `/lib/quizTypes.js` — client-safe constants: `TYPE_LABELS`, `TYPE_ICONS`, `TYPE_COLORS`. Kept separate from `parseQuiz.js` so client components can import them without pulling in `fs`/`path`.
+- `/lib/shuffle.js` — single Fisher-Yates `shuffle(array)` utility.
+
+### Component tree
+
+```
+app/page.js (server)
+  └── TopicList (client) — filter chips + quiz card grid
+
+app/quiz/[slug]/page.js (server)
+  └── TypeList (client) — one tile per question type present in the quiz
+
+app/quiz/[slug]/[type]/page.js (server)
+  └── QuizRunner (client) — owns all quiz state
+        ├── TrueFalse / MultipleChoice / SelectAll / FillBlank / Matching
+        ├── FeedbackBanner — shown after each answer; renders explanation for true-false
+        └── ScoreSummary — end screen with score + per-question review
+```
+
+### Quiz content
+
+12 quiz files in `/quizzes/` covering: General, Geography, Science, History, Programming, Entertainment, Nature, Space, Food, Sports, Music, Math.
+
+Full quiz file format specification: **[QUIZ_FORMAT.md](./QUIZ_FORMAT.md)**
 
 ---
 
@@ -38,7 +85,7 @@ flowchart LR
     subgraph files["/quizzes/*.md"]
         MD1["geography.md"]
         MD2["history.md"]
-        MD3["..."]
+        MD3["... (12 total)"]
     end
 
     subgraph lib["lib/"]
@@ -149,53 +196,3 @@ erDiagram
     QUESTION ||--o| FILL_BLANK      : "type: fill-blank"
     QUESTION ||--o| MATCHING        : "type: matching"
 ```
-
----
-
-## Quiz `.md` file format
-
-All content is in YAML frontmatter. The markdown body is unused.
-
-```yaml
----
-title: "..."
-topic: "..."          # used for filter chips on home page
-description: "..."
-emoji: "🧪"           # displayed on home page tile (default: 📚)
-questions:
-  - id: 1
-    type: true-false
-    question: "..."
-    answer: true
-    explanation: "..."   # optional — shown after answer is submitted
-
-  - id: 2
-    type: multiple-choice
-    question: "..."
-    options: ["A", "B", "C", "D"]
-    answer: "B"
-
-  - id: 3
-    type: select-all
-    question: "..."
-    options: ["A", "B", "C", "D"]
-    answers: ["A", "C"]
-
-  - id: 4
-    type: fill-blank
-    question: "The answer is ___."
-    answer: "foo"
-    accept: ["foo", "Foo"]   # all accepted variants (case-insensitive match also applied)
-
-  - id: 5
-    type: matching
-    question: "..."
-    pairs:
-      - left: "A"
-        right: "1"
-      - left: "B"
-        right: "2"
----
-```
-
-**Adding a new quiz:** drop a new `.md` file in `/quizzes/`. It appears on the home page automatically. If its `topic` value is new, a new filter chip is added automatically.
