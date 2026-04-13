@@ -8,8 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev       # Start dev server at localhost:3000
 npm run build     # Production build
 npm run start     # Start production server
-vercel            # Preview deploy
-vercel --prod     # Production deploy
+git push          # Auto-deploys via Vercel (connected to GitHub)
 ```
 
 ## Architecture

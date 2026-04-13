@@ -98,6 +98,15 @@ questions:
 
 ## Deployment
 
+The app is connected to Vercel via GitHub. Every push to `master` redeploys automatically.
+
 ```bash
-vercel --prod
+git add .
+git commit -m "your message"
+git push
 ```
+
+- GitHub: https://github.com/ziolkowskid06/quiz-practice
+- Vercel dashboard: https://vercel.com/dashboard
+
+**Removing a quiz:** delete the `.md` file from `/quizzes/` and push.
