@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quiz Practice App
 
-## Getting Started
+A personal quiz practice web app built with Next.js and deployed on Vercel. Quizzes are plain Markdown files — no database, no login required.
 
-First, run the development server:
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## How it works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Home page** — shows all available quizzes as cards. Filter by topic using the chips at the top.
+- **Topic page** — after selecting a quiz, choose a question type (True/False, Multiple Choice, etc.)
+- **Quiz runner** — questions are shuffled on every run. You get immediate feedback after each answer.
+- **Score summary** — see your total score and review every question at the end.
 
-## Learn More
+## Creating a new quiz
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a new file in `/quizzes/` named `<your-topic>.md`
+2. Fill in the frontmatter following the format below
+3. Save — the quiz appears on the home page instantly (no code changes needed)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Quiz file format
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```yaml
+---
+title: "My Quiz Title"
+topic: "Category Name"    # groups quizzes under the same filter chip
+description: "Short description shown on the card."
+emoji: "🎯"               # emoji shown on the home page tile
+questions:
+  # ... (see question types below)
+---
+```
 
-## Deploy on Vercel
+### Question types
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### True or False
+```yaml
+- id: 1
+  type: true-false
+  question: "The Earth orbits the Sun."
+  answer: true
+  explanation: "Optional — explain why the answer is true or false. Shown after submission."
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Multiple Choice
+```yaml
+- id: 2
+  type: multiple-choice
+  question: "What is the capital of Japan?"
+  options: ["Beijing", "Seoul", "Tokyo", "Bangkok"]
+  answer: "Tokyo"
+```
+
+#### Select All That Apply
+```yaml
+- id: 3
+  type: select-all
+  question: "Which of these are planets?"
+  options: ["Mars", "Pluto", "Venus", "Andromeda"]
+  answers: ["Mars", "Venus"]
+```
+
+#### Fill in the Blank
+```yaml
+- id: 4
+  type: fill-blank
+  question: "The capital of Australia is ___."
+  answer: "Canberra"
+  accept: ["canberra", "Canberra"]   # list every spelling/casing you want to accept
+```
+
+#### Matching
+```yaml
+- id: 5
+  type: matching
+  question: "Match each country to its capital."
+  pairs:
+    - left: "Germany"
+      right: "Berlin"
+    - left: "Italy"
+      right: "Rome"
+    - left: "Spain"
+      right: "Madrid"
+```
+
+### Tips
+
+- You can mix all question types in one file — the quiz runner groups them by type on the type-selection screen.
+- Questions and answer options are shuffled automatically on every run.
+- The `explanation` field only applies to `true-false` questions. Leave it out for other types.
+- If multiple quizzes share the same `topic` value they all appear under the same filter chip on the home page. This is useful for series (e.g. multiple books under `topic: "Books"`).
+
+## Deployment
+
+```bash
+vercel --prod
+```
