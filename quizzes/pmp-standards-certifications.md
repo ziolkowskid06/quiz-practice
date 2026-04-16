@@ -93,12 +93,12 @@ questions:
       question: "PMI®"
       answer: "Project Management Institute"
       accept: ["Project Management Institute", "project management institute"]
-      explanation: "The world\'s leading not-for-profit professional membership association for project management. PMI sets global standards (like the PMBOK Guide), provides certifications (PMP, CAPM, PgMP), and advances the PM profession worldwide."
+      explanation: "The world's leading not-for-profit professional membership association for project management. PMI sets global standards (like the PMBOK Guide), provides certifications (PMP, CAPM, PgMP), and advances the PM profession worldwide."
 
     - id: 14
       type: fill-blank
       question: "PMMM"
       answer: "Project Management Maturity Model"
       accept: ["Project Management Maturity Model", "project management maturity model"]
-      explanation: "A framework used to assess an organization\'s level of PM process maturity and provide a roadmap for improvement. Organizations typically progress through five maturity levels, from Initial (ad hoc) to Optimizing (continuous improvement)."
+      explanation: "A framework used to assess an organization's level of PM process maturity and provide a roadmap for improvement. Organizations typically progress through five maturity levels, from Initial (ad hoc) to Optimizing (continuous improvement)."
 ---

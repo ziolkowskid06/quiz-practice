@@ -30,7 +30,7 @@ questions:
       question: "ROM"
       answer: "Rough Order of Magnitude"
       accept: ["Rough Order of Magnitude"]
-      explanation: "An initial estimate provided very early in the project life cycle (Initiating). It typically has a range of $-25\%$ to $+75\%$ accuracy."
+      explanation: "An initial estimate provided very early in the project life cycle (Initiating). It typically has a range of -25% to +75% accuracy."
 
     - id: 5
       type: fill-blank
@@ -135,7 +135,7 @@ questions:
       question: "CBR"
       answer: "Cost-Benefit Ratio"
       accept: ["Cost-Benefit Ratio", "cost benefit ratio", "cost-benefit ratio"]
-      explanation: "The ratio of a project\'s total costs to its total benefits. A CBR less than 1.0 is desirable (benefits outweigh costs). It is the inverse of the BCR — where BCR > 1.0 is good, CBR < 1.0 is good. Used in project selection to compare competing investments."
+      explanation: "The ratio of a project's total costs to its total benefits. A CBR less than 1.0 is desirable (benefits outweigh costs). It is the inverse of the BCR — where BCR > 1.0 is good, CBR < 1.0 is good. Used in project selection to compare competing investments."
 
     - id: 20
       type: fill-blank

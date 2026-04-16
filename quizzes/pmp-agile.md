@@ -79,7 +79,7 @@ questions:
       question: "DA"
       answer: "Disciplined Agile"
       accept: ["Disciplined Agile", "disciplined agile"]
-      explanation: "A process-decision toolkit acquired by PMI that provides guidance for choosing and tailoring an agile way of working. Unlike prescriptive frameworks such as Scrum or SAFe, DA recognizes that one size does not fit all and offers a menu of strategies to match the team\'s context."
+      explanation: "A process-decision toolkit acquired by PMI that provides guidance for choosing and tailoring an agile way of working. Unlike prescriptive frameworks such as Scrum or SAFe, DA recognizes that one size does not fit all and offers a menu of strategies to match the team's context."
 
     - id: 12
       type: fill-blank
