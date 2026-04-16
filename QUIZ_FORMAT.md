@@ -33,6 +33,17 @@ questions:
 
 ---
 
+## YAML string rules
+
+All string values must be wrapped in double quotes (`"`). Inside a double-quoted YAML string:
+
+- **Do not use backslash escapes** — `\'`, `\%`, `\$` are invalid and will crash the build. Write the character as-is instead.
+- **Apostrophes are fine unescaped** — write `"don't"`, not `"don\'t"`
+- **Double quotes inside a string must be escaped** — write `\"` or reword to avoid them
+- **Math-style notation** (`$EV / AC$`, `$-25%$`) renders as plain text — the app does not render LaTeX
+
+---
+
 ## Metadata fields
 
 | Field | Required | Description |
@@ -129,8 +140,8 @@ The user types a free-text answer into an input field.
 
 | Field | Required | Value |
 |---|---|---|
-| `answer` | Yes | The canonical correct answer |
-| `accept` | No | Array of all accepted spelling/casing variants. The app also applies case-insensitive matching automatically, so `["canberra", "Canberra"]` is sufficient for most cases. |
+| `answer` | Yes | The canonical correct answer (shown to the user if they answer incorrectly) |
+| `accept` | No | Array of alternate accepted answers (different phrasings or abbreviations). Case is ignored automatically — no need to list both `"Canberra"` and `"canberra"`. |
 
 **Tip:** Use `___` in the question text to visually mark where the blank is.
 
@@ -213,7 +224,8 @@ questions:
 
 ## Rules summary
 
-- Use all 5 question types in each file where possible — the app shows a separate tile for each type
+- A quiz file can use any subset of the 5 types — the app shows one tile per type present, so a file with only `fill-blank` questions will show a single tile
+- Use all 5 types where it makes sense — more variety is better for learning
 - `id` values must be unique integers within the file
 - `answer` (multiple-choice) must exactly match one of the `options` strings
 - `answers` (select-all) must all exactly match items in `options`
