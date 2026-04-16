@@ -53,12 +53,26 @@ app/quiz/[slug]/[type]/page.js (server)
   └── QuizRunner (client) — owns all quiz state
         ├── TrueFalse / MultipleChoice / SelectAll / FillBlank / Matching
         ├── FeedbackBanner — shown after each answer; renders explanation for true-false
-        └── ScoreSummary — end screen with score + per-question review
+        ├── ScoreSummary — end screen with score + per-question review
+        └── Review mode (inline) — browse previously answered questions mid-quiz
 ```
+
+### QuizRunner state
+
+| State | Type | Description |
+|---|---|---|
+| `questions` | array | Shuffled question list for this session |
+| `index` | number | Current active question (0-based) |
+| `feedback` | object\|null | Set after submitting; holds `correct`, `correctAnswer`, `explanation` |
+| `results` | array | Answered questions: `question`, `type`, `userAnswer`, `correct`, `correctAnswer`, `explanation` |
+| `done` | boolean | True when all questions answered → renders ScoreSummary |
+| `browseIndex` | number\|null | `null` = active quiz; number = review mode showing that past answer |
 
 ### Quiz content
 
-12 quiz files in `/quizzes/` covering: General, Geography, Science, History, Programming, Entertainment, Nature, Space, Food, Sports, Music, Math.
+22 quiz files in `/quizzes/` covering: Geography, Science, History, JavaScript, Movies, Animals, Space, Food, Sports, Music, Math, and 10 PMP Acronyms sets (EVM, Scheduling, Risk, Quality, Financial, Agile, Procurement, Scope & Org, Gen Mgmt, Standards & Certifications).
+
+Quiz filenames must be lowercase and hyphenated (e.g. `pmp-evm.md`) — the filename becomes the URL slug. Avoid spaces and special characters.
 
 Full quiz file format specification: **[QUIZ_FORMAT.md](./QUIZ_FORMAT.md)**
 
@@ -138,6 +152,7 @@ flowchart TD
     QT --> MA["Matching"]
     QR --> FBanner["FeedbackBanner\n✅ / ❌ + explanation"]
     QR --> SS["ScoreSummary\nscore + review + retake"]
+    QR --> RM["Review mode\nbrowse past answers mid-quiz"]
 ```
 
 ### 4. Quiz state machine (QuizRunner)
@@ -147,7 +162,10 @@ stateDiagram-v2
     [*] --> Answering: quiz loaded\nquestions shuffled
     Answering --> Feedback: answer submitted\ncheckAnswer()
     Feedback --> Answering: Next Question →
+    Feedback --> Review: ← Review Answers
     Feedback --> Done: last question answered
+    Review --> Review: ← Previous / Next →
+    Review --> Feedback: Back to Quiz →
     Done --> Answering: Retake\nre-shuffle
     Done --> [*]: navigate away
 ```
