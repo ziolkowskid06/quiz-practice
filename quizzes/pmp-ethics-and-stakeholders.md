@@ -167,4 +167,133 @@ questions:
     options: ["Interest measures formal authority; Influence measures personal motivation", "Interest means caring about the project outcome; Influence means ability to persuade others even without formal authority", "Interest applies in Agile contexts; Influence applies in Predictive contexts", "They are interchangeable terms used in different editions of the PMBOK"]
     answer: "Interest means caring about the project outcome; Influence means ability to persuade others even without formal authority"
     explanation: "Interest = how much a stakeholder cares about the project. Influence = political capital to sway other people's decisions, even without a formal role. A stakeholder can have low Interest (they do not personally care) but high Influence (their opinion shapes others who do have authority). This is the exact distinction between the Power/Interest and Power/Influence grids."
+
+  - id: 23
+    type: multiple-choice
+    question: "Your project team spans five countries with significantly different cultural norms around communication directness and meeting participation. Which PMI Code of Ethics pillar primarily guides how you handle this?"
+    options: ["Responsibility", "Fairness", "Respect", "Honesty"]
+    answer: "Respect"
+    explanation: "Respect requires treating people with high regard, valuing diverse perspectives, and creating an environment where all voices are heard. Managing a global team means actively understanding and accommodating cultural differences rather than imposing a single communication style. This might mean updating the Team Charter to reflect cultural norms around feedback, silence, or decision-making."
+
+  - id: 24
+    type: multiple-choice
+    question: "A PM discovers they made a significant calculation error in the project budget that will cost the company an additional $50,000. What is the correct action under the Responsibility pillar?"
+    options: ["Quietly correct the error in the next budget revision", "Wait until project close to disclose it in lessons learned", "Proactively inform the sponsor immediately, admit the error, and present solutions", "Ask a team member to re-run the numbers to see if the error is significant enough to report"]
+    answer: "Proactively inform the sponsor immediately, admit the error, and present solutions"
+    explanation: "Responsibility requires owning your mistakes — not hiding them. The PMI mindset: own it immediately, go to the sponsor proactively rather than waiting for them to discover it, and come with a recovery plan. Covering errors until a convenient moment violates both Responsibility and Honesty and removes the sponsor's ability to make timely decisions."
+
+  - id: 25
+    type: true-false
+    question: "During a vendor selection process, it is acceptable to answer one vendor's technical question privately without informing the other vendors, as long as the answer does not give them a competitive advantage."
+    answer: false
+    explanation: "False. Fairness requires equal access to information for all bidding parties. There is no such thing as a neutral private answer in a competitive procurement process. Any clarification given to one vendor must be distributed to all bidders simultaneously — regardless of whether the PM believes it creates an advantage. The standard is equal information, not equal advantage."
+
+  - id: 26
+    type: multiple-choice
+    question: "A senior executive has high formal authority over the project budget but has explicitly stated they want minimal involvement — only to be notified of major issues. How should this stakeholder be managed according to the Power/Interest Grid?"
+    options: ["Manage Closely", "Keep Informed", "Keep Satisfied", "Monitor"]
+    answer: "Keep Satisfied"
+    explanation: "High Power / Low Interest stakeholders are 'Keep Satisfied.' They have the ability to fund or cancel your project, but they do not want detailed involvement. The PM must keep them satisfied with concise high-level updates and prompt escalation of significant issues — without overwhelming them with detail they have not asked for."
+
+  - id: 27
+    type: multiple-choice
+    question: "A group of end users will be heavily impacted by the system being built and are very engaged with its progress, but they have no formal authority to approve or block project decisions. How should they be managed according to the Power/Interest Grid?"
+    options: ["Manage Closely", "Keep Satisfied", "Keep Informed", "Monitor"]
+    answer: "Keep Informed"
+    explanation: "Low Power / High Interest stakeholders are 'Keep Informed.' They care deeply about the outcome but cannot make formal decisions. Keeping them informed builds goodwill, surfaces valuable feedback, and prevents surprises. The most common exam trap: confusing Keep Informed (high interest, low power) with Keep Satisfied (high power, low interest)."
+
+  - id: 28
+    type: matching
+    question: "Match each Power/Interest Grid quadrant to its stakeholder management strategy."
+    pairs:
+      - left: "High Power + High Interest"
+        right: "Manage Closely: detailed communication, active engagement, frequent updates"
+      - left: "High Power + Low Interest"
+        right: "Keep Satisfied: high-level updates, prompt issue escalation, minimal detail"
+      - left: "Low Power + High Interest"
+        right: "Keep Informed: regular updates, involve in feedback loops, no formal decision authority"
+      - left: "Low Power + Low Interest"
+        right: "Monitor: minimal communication, watch for changes in power or interest level"
+    explanation: "The four quadrants directly drive your Communications Management Plan. High Power/High Interest stakeholders need the most engagement. Low Power/Low Interest need the least. The classic exam trap is swapping 'Keep Satisfied' and 'Keep Informed' — remember: Satisfied = they have Power (they can hurt you); Informed = they have Interest (they care about the outcome)."
+
+  - id: 29
+    type: multiple-choice
+    question: "A team member has strong opinions about the new system design and attends every status meeting, but has no formal decision-making authority. A senior executive has sign-off authority but rarely attends and asks for brief monthly summaries only. How does the Power/Interest Grid classify these two stakeholders?"
+    options: ["Both are Manage Closely", "Team member: Monitor; Executive: Manage Closely", "Team member: Keep Informed; Executive: Keep Satisfied", "Team member: Keep Satisfied; Executive: Keep Informed"]
+    answer: "Team member: Keep Informed; Executive: Keep Satisfied"
+    explanation: "The engaged team member has High Interest but Low Power = Keep Informed. The disengaged executive has High Power but Low Interest = Keep Satisfied. These two stakeholders require completely different communication strategies — detailed updates for one, concise summaries for the other. Mixing them up leads to alienated executives and underinformed users."
+
+  - id: 30
+    type: true-false
+    question: "When two team members have a conflict, the PM should involve HR as the first step to ensure proper documentation and process compliance."
+    answer: false
+    explanation: "Under the Respect pillar, the correct first step is to address the issue directly and privately with the individuals involved. Jumping straight to HR skips the human respect of direct conversation and can permanently damage trust and morale. HR escalation is appropriate only if direct resolution fails or if the situation involves serious misconduct such as harassment or discrimination."
+
+  - id: 31
+    type: multiple-choice
+    question: "A construction project faces opposition from a local environmental group. Initially they have low Power and low Urgency. A new regulation then grants them the legal standing to halt construction. Which Salience Model dimension has changed?"
+    options: ["Power increased — they should now be Managed Closely on the Power/Interest Grid", "Legitimacy increased — they become a higher-priority stakeholder requiring immediate attention", "Interest increased — they move into the High Interest quadrant", "Urgency increased — they automatically become a Definitive stakeholder"]
+    answer: "Legitimacy increased — they become a higher-priority stakeholder requiring immediate attention"
+    explanation: "The regulatory change granted the group legal standing — this is a Legitimacy shift. The Salience Model is dynamic: Power, Legitimacy, or Urgency can change overnight, immediately changing a stakeholder's priority level. This is why the Salience Model is used on volatile or complex projects — stakeholder classifications are not fixed, and PMs must continuously reassess."
+
+  - id: 32
+    type: multiple-choice
+    question: "In Agile, making all work visible on a Kanban board so any team member or stakeholder can see current project status at any time is an example of which PMI Code of Ethics pillar in practice?"
+    options: ["Responsibility", "Respect", "Fairness", "Honesty"]
+    answer: "Honesty"
+    explanation: "PMI calls this Radical Transparency — making all work visible is a structural act of Honesty. It ensures that status reflects reality rather than what people want to hear. The equivalent in Predictive environments is accurate EVM reporting even when metrics are unfavourable. Both practices embody the Honesty pillar: the information system must reflect the truth."
+
+  - id: 33
+    type: multiple-choice
+    question: "The Stakeholder Cube adds a third dimension to the standard Power/Interest analysis. What is that third dimension?"
+    options: ["Urgency", "Legitimacy", "Attitude", "Influence"]
+    answer: "Attitude"
+    explanation: "The Stakeholder Cube adds Attitude to Power and Interest — specifically whether a stakeholder is a Champion (actively supports the project), Neutral, or Blocker (actively works against it). Two stakeholders identical on Power and Interest can require completely different engagement strategies depending on whether they are champions or blockers. This is what makes the Cube more nuanced than a flat 2D grid."
+
+  - id: 34
+    type: true-false
+    question: "The Stakeholder Cube is best suited for simple projects with a small, homogeneous group of stakeholders who broadly support the project."
+    answer: false
+    explanation: "The Stakeholder Cube is designed for complex projects with a large pool of stakeholders who have polarised attitudes — some championing the project, others blocking it. For straightforward projects with aligned stakeholders, the simpler Power/Interest Grid is sufficient. The Cube's value is in making champion/blocker distinctions visible when a 2D grid cannot."
+
+  - id: 35
+    type: fill-blank
+    question: "In the Salience Model, the dimension that asks 'Is this stakeholder's involvement morally, legally, or organisationally appropriate?' is called ___."
+    answer: "Legitimacy"
+    accept: ["legitimacy"]
+    explanation: "Legitimacy is one of the three Salience Model dimensions (alongside Power and Urgency). A neighbourhood committee may have passionate Urgency and even some political Power, but if they have no legal or contractual standing related to the project, their Legitimacy is low. Legitimacy distinguishes stakeholders who have a valid claim from those who are simply vocal."
+
+  - id: 36
+    type: multiple-choice
+    question: "A senior government minister has the formal authority to cancel a project's funding, but has no official involvement in the project's scope and faces no time-sensitive need related to it. In the Salience Model, this stakeholder is classified as:"
+    options: ["Definitive", "Dominant", "Dormant", "Demanding"]
+    answer: "Dormant"
+    explanation: "A Dormant stakeholder has Power only — no Legitimacy (no formally appropriate involvement) and no Urgency (no immediate need). They are powerful but currently inactive. Dormant stakeholders can become more salient quickly if Legitimacy or Urgency develops — for example, if a regulation gives them oversight authority. PMs should monitor them even when they are quiet."
+
+  - id: 37
+    type: multiple-choice
+    question: "A PM is working in a large financial institution where informal relationships among senior leaders heavily influence project decisions more than the formal organisational chart. Which stakeholder model is most appropriate to use?"
+    options: ["Power/Interest Grid", "Stakeholder Cube", "Power/Influence Grid", "Salience Model"]
+    answer: "Power/Influence Grid"
+    explanation: "The Power/Influence Grid is designed for political, matrixed environments where informal influence — the ability to sway other people's decisions without formal authority — matters as much as or more than position power. When 'who you know' drives decisions more than 'what your title is,' the Power/Influence Grid gives the PM the right map."
+
+  - id: 38
+    type: true-false
+    question: "On the PMP exam, ethics questions typically ask you to define the four pillars of the PMI Code of Ethics by name rather than apply them to a realistic scenario."
+    answer: false
+    explanation: "The PMP exam tests ethics through situational scenarios, not definitions. You will be placed in a realistic PM situation — a conflict of interest, pressure to falsify data, a qualification gap — and asked what the PM should do next. Knowing the four pillar names (Responsibility, Respect, Fairness, Honesty) matters less than understanding the PMI mindset behind each one."
+
+  - id: 39
+    type: multiple-choice
+    question: "A small activist group has no formal authority over a project and no legally recognised stake in its outcome, but they are threatening to stage a protest at the project site tomorrow. In the Salience Model, this group is classified as:"
+    options: ["Dormant", "Definitive", "Dominant", "Demanding"]
+    answer: "Demanding"
+    explanation: "A Demanding stakeholder has Urgency only — their need is immediate and time-sensitive, but they lack Power and Legitimacy. They can be disruptive and attract attention, but they cannot formally force change. PMs must still manage them carefully: their Urgency may attract media coverage or political pressure that brings in stakeholders who DO have Power and Legitimacy."
+
+  - id: 40
+    type: multiple-choice
+    question: "You learn that a colleague accepted an expensive gift from a vendor whose contract renewal is being evaluated next week. What should you do first?"
+    options: ["Report it directly to senior management without speaking to your colleague", "Ignore it — gifts are a common business courtesy", "Speak to your colleague directly and encourage them to disclose the conflict of interest", "Submit an anonymous report to the PMO immediately"]
+    answer: "Speak to your colleague directly and encourage them to disclose the conflict of interest"
+    explanation: "This scenario combines three ethics pillars. Responsibility: you cannot ignore it — silence is a violation. Respect: address the person directly and privately before escalating. Fairness: the gift creates a conflict of interest that compromises the vendor evaluation. The PMI-correct sequence is always direct conversation first, then escalate if the person refuses to act. Anonymous reporting as a first step skips Respect."
 ---

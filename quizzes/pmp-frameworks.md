@@ -195,4 +195,119 @@ questions:
       - left: "Time-bound"
         right: "The Schedule Baseline or the Sprint timebox"
     explanation: "SMART maps directly to core PM tools. Specific = WBS clarity. Measurable = EVM or quality metrics. Relevant = Business Case alignment. Time-bound = Schedule Baseline or Sprint. Achievable is verified through capacity planning and resource availability before committing to the goal."
+
+  - id: 25
+    type: fill-blank
+    question: "Before PMI updated the Talent Triangle, the component now called 'Power Skills' was known as ___."
+    answer: "Leadership"
+    accept: ["leadership"]
+    explanation: "PMI renamed 'Leadership' to 'Power Skills' to signal that soft skills are not soft at all — communication, emotional intelligence, conflict resolution, and active listening are powerful competencies that directly determine project outcomes. The rename emphasises their critical, practical impact."
+
+  - id: 26
+    type: multiple-choice
+    question: "Halfway through a software project, the market shifts and the product will no longer deliver its projected ROI. The sponsor asks the PM what to do. Which Talent Triangle component guides this decision?"
+    options: ["Ways of Working", "Power Skills", "Business Acumen", "Risk Management"]
+    answer: "Business Acumen"
+    explanation: "Business Acumen is the ability to continuously re-evaluate whether a project still delivers organisational value. If the market has shifted and ROI is gone, a PM with Business Acumen will recommend terminating or pivoting rather than completing the project for its own sake. Finishing on time and on budget is worthless if the outcome is no longer valuable."
+
+  - id: 27
+    type: true-false
+    question: "A Hybrid life cycle combines elements of both Predictive and Agile approaches within the same project."
+    answer: true
+    explanation: "Hybrid is neither fully Predictive nor fully Agile. A common example: a project with a fixed regulatory deliverable managed Predictively alongside a software component developed in Agile Sprints. PMI expects PMs to tailor their approach, and Hybrid is often the most realistic answer for complex real-world projects."
+
+  - id: 28
+    type: multiple-choice
+    question: "A PM assesses that a construction component requires a Predictive life cycle while a parallel digital dashboard should use Agile Sprints. Choosing different approaches for different parts of the project is an example of:"
+    options: ["Gold plating", "Scope creep", "Tailoring", "Risk aversion"]
+    answer: "Tailoring"
+    explanation: "Tailoring is the PMI principle of selecting and adapting the most appropriate life cycle and practices for each unique project context. PMI does not mandate any single methodology — it expects PMs to assess the situation and tailor their approach to fit the project's constraints, goals, and environment."
+
+  - id: 29
+    type: multiple-choice
+    question: "A sponsor demands a complex system integration in three weeks, but the team's honest capacity estimate is eight weeks. A servant leader's pushback on this demand demonstrates which SMART element?"
+    options: ["Specific", "Measurable", "Achievable", "Relevant"]
+    answer: "Achievable"
+    explanation: "Achievable requires goals to be realistic given available time, budget, and resources. A servant leader protects the team by challenging impossible deadlines rather than silently accepting them. If a goal is not Achievable, the team is set up for failure regardless of effort or commitment."
+
+  - id: 30
+    type: multiple-choice
+    question: "A project objective states: 'Reduce average customer support resolution time from 48 hours to 24 hours by Q3.' Which SMART element does the '48 hours to 24 hours' portion most directly satisfy?"
+    options: ["Specific", "Measurable", "Achievable", "Relevant"]
+    answer: "Measurable"
+    explanation: "Measurable requires concrete criteria to track progress and define success. '48 hours to 24 hours' provides a quantifiable baseline and a clear finish line — you know exactly when you have succeeded. EVM on a project serves the same purpose: it makes progress objectively verifiable rather than subjective."
+
+  - id: 31
+    type: true-false
+    question: "In an Iterative life cycle, each iteration delivers a fully usable, production-ready product the customer can immediately use."
+    answer: false
+    explanation: "This describes Agile/Incremental, not Iterative. In an Iterative life cycle, intermediate outputs are drafts or prototypes intended for feedback and refinement, not for actual use. The customer reviews work-in-progress to guide the next iteration. Only the final delivery is the usable product."
+
+  - id: 32
+    type: multiple-choice
+    question: "A project team writes all processes and decisions into a shared repository. They also commission a working software prototype for the client to test hands-on. The repository is Explicit knowledge. The prototype is best classified as:"
+    options: ["Tacit knowledge", "Tangible knowledge", "Formal knowledge", "Implicit knowledge"]
+    answer: "Tangible knowledge"
+    explanation: "Tangible knowledge is Explicit knowledge that has taken a physical or highly concrete interactive form. The repository is Explicit (written, shareable). The working prototype is Tangible — it embodies the knowledge in something stakeholders can actually touch and test. In Agile, every working Increment is a form of Tangible knowledge."
+
+  - id: 33
+    type: multiple-choice
+    question: "A team goal states: 'Improve the onboarding experience.' A servant leader flags this as incomplete because it violates which SMART element?"
+    options: ["Time-bound", "Achievable", "Specific", "Relevant"]
+    answer: "Specific"
+    explanation: "Specific requires the goal to be clear and unambiguous — stating exactly what is expected, why it matters, and who is involved. 'Improve the onboarding experience' is vague on all counts. A Specific version would name which part of onboarding, define what improvement looks like, and identify who is affected. Ambiguity is the enemy of execution."
+
+  - id: 34
+    type: multiple-choice
+    question: "An Agile team proposes spending two Sprints optimising the performance of a module scheduled for retirement next quarter. Which SMART element does this goal most clearly violate?"
+    options: ["Specific", "Measurable", "Achievable", "Relevant"]
+    answer: "Relevant"
+    explanation: "Relevant requires a goal to align with broader business strategy and actually deliver value. Optimising a module being retired next quarter produces zero business value — the work is wasted. This is Business Acumen in practice: a PM must continuously question whether the work still matters, not just whether it can be done."
+
+  - id: 35
+    type: matching
+    question: "Match each Waterfall phase to its primary purpose."
+    pairs:
+      - left: "Requirements"
+        right: "Define what the system must do and the constraints it must satisfy"
+      - left: "Design"
+        right: "Create the system architecture and technical blueprint"
+      - left: "Implementation"
+        right: "Build and code the actual product according to the design"
+      - left: "Verification"
+        right: "Test that the product meets all defined requirements"
+    explanation: "Waterfall flows sequentially through five phases: Requirements → Design → Implementation → Verification → Maintenance. Each phase must be largely complete before the next begins — this is what makes Waterfall a Predictive life cycle. The Maintenance phase (ongoing support after delivery) is the fifth phase and is not shown here but completes the sequence."
+
+  - id: 36
+    type: true-false
+    question: "In a Predictive life cycle, any change to the project scope must go through a formal change control process before it is approved."
+    answer: true
+    explanation: "Formal change control is a defining characteristic of the Predictive life cycle. Changes are not simply accepted — they are submitted, evaluated for impact on scope, schedule, and cost, then approved or rejected through a formal process (typically by the Change Control Board). This contrasts with Agile, where the Product Backlog is continuously updated without a formal change request."
+
+  - id: 37
+    type: multiple-choice
+    question: "When assessing which life cycle to use for a new project, a PM asks: 'Does the customer need working, usable pieces of the product delivered regularly, or do they need the complete final deliverable all at once?' If the answer is 'they need usable pieces now,' which life cycle does PMI recommend?"
+    options: ["Predictive", "Iterative", "Agile", "Waterfall"]
+    answer: "Agile"
+    explanation: "This is one of the three PMI mindset check questions for life cycle selection. Needing usable increments immediately points to Agile/Incremental. Needing the complete product at once points to Predictive or Iterative. The other two questions are: 'How well do we understand the requirements?' and 'How costly is it to make a change later?'"
+
+  - id: 38
+    type: multiple-choice
+    question: "The 'Manage Project Knowledge' process — which covers how knowledge is captured, shared, and used across the project — belongs to which PMBOK Knowledge Area?"
+    options: ["Scope Management", "Quality Management", "Resource Management", "Integration Management"]
+    answer: "Integration Management"
+    explanation: "Manage Project Knowledge sits in Integration Management because knowledge management touches every part of the project — it is an integrating discipline. Its outputs feed directly into the Lessons Learned Register, which then becomes part of the organisation's process assets for future projects."
+
+  - id: 39
+    type: true-false
+    question: "A PM's primary goal in knowledge management is to maintain a well-organised central document repository so all project information can be retrieved later."
+    answer: false
+    explanation: "PMI's key mindset: knowledge management is not primarily about storing documents — it is about connecting people so they actively share their expertise. Document repositories capture Explicit knowledge. The harder and more valuable goal is creating the psychological safety and cultural conditions where team members voluntarily share their Tacit knowledge through daily interaction."
+
+  - id: 40
+    type: multiple-choice
+    question: "At the end of each Sprint, the Agile team delivers a working Increment — a fully functional piece of software that stakeholders can test and interact with. This Increment is best classified as which type of knowledge?"
+    options: ["Explicit knowledge", "Tacit knowledge", "Formal knowledge", "Tangible knowledge"]
+    answer: "Tangible knowledge"
+    explanation: "A working Increment is Tangible knowledge — it is knowledge made concrete and interactive. Stakeholders can touch it, test it, and provide feedback based on direct experience rather than reading a document. This is why 'working software over comprehensive documentation' is a core Agile value: Tangible knowledge communicates more effectively than Explicit knowledge alone."
 ---
