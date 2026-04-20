@@ -1,6 +1,6 @@
 ---
 title: "PMP Frameworks & Methodology"
-topic: "PMP"
+topic: "Project Management"
 description: "Test your knowledge of the PMI Talent Triangle, project life cycles, knowledge types, and SMART goal-setting."
 emoji: "🏗️"
 questions:
