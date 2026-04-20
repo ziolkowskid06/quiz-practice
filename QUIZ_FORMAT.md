@@ -1,6 +1,6 @@
 # Quiz File Format Specification
 
-This document defines the exact format for quiz files used in the Quiz Practice App. Any AI model or tool generating quiz content must follow this specification precisely for the file to be compatible.
+This document defines the exact format for quiz `.md` files. Any AI model or tool generating quiz content must follow this specification precisely for the file to be compatible.
 
 ---
 
@@ -64,7 +64,7 @@ Every question regardless of type must have:
 | `id` | Yes | Unique integer. Must be sequential starting from 1 |
 | `type` | Yes | One of the 5 type values listed below |
 | `question` | Yes | The question text shown to the user |
-| `explanation` | No | Shown to the user after they submit their answer, for any question type. Explain why the answer is correct. Highly recommended for learning purposes. |
+| `explanation` | Yes | Shown to the user after they submit their answer, for any question type. Explain why the answer is correct. Required on every question. |
 
 ---
 
@@ -168,7 +168,7 @@ The user matches items from the left column to items in the right column.
 
 | Field | Required | Value |
 |---|---|---|
-| `pairs` | Yes | Array of objects each with a `left` and `right` string. Minimum 3 pairs, maximum 6. |
+| `pairs` | Yes | Array of exactly 4 objects each with a `left` and `right` string. Always use exactly 4 pairs. If a topic requires more than 4 matches, split into multiple matching questions (definitions may repeat across questions if needed). |
 
 ---
 
@@ -231,4 +231,5 @@ questions:
 - `answers` (select-all) must all exactly match items in `options`
 - `type` must be one of: `true-false`, `multiple-choice`, `select-all`, `fill-blank`, `matching`
 - Do not put any content below the closing `---`
-- Always include `explanation` on every question — it helps the user understand why the answer is correct
+- Always include `explanation` on every question — it is required for all question types
+- `matching` questions must always have exactly 4 pairs; split into multiple questions if more are needed (pairs may repeat)
