@@ -1,6 +1,6 @@
 ---
 title: "PMI Ethics & Stakeholder Analysis"
-topic: "PMP"
+topic: "Project Management"
 description: "Apply the PMI Code of Ethics and master the four stakeholder analysis models used to prioritize engagement."
 emoji: "⚖️"
 questions:
