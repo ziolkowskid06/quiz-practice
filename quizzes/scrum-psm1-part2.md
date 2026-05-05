@@ -1,6 +1,6 @@
 ---
 title: "PSM I — Part 2: Scrum in Practice"
-topic: "PMP"
+topic: "SCRUM"
 description: "Starting Scrum, Scrum roles, stakeholder interactions, Sprint execution, and closing."
 emoji: "⚙️"
 questions:

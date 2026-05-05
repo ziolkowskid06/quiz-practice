@@ -1,6 +1,6 @@
 ---
 title: "PSM I — Part 3: Advanced & Model Assessment"
-topic: "PMP"
+topic: "SCRUM"
 description: "Quick tests, exam strategy tips, and a full 80-question model PSM I assessment."
 emoji: "🎯"
 questions:

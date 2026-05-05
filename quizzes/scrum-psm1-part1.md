@@ -1,6 +1,6 @@
 ---
 title: "PSM I — Part 1: Scrum Foundations"
-topic: "PMP"
+topic: "SCRUM"
 description: "Scrum theory, empiricism, the Scrum Team, and core framework concepts."
 emoji: "🏗️"
 questions:
