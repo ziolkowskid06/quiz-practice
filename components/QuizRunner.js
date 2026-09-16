@@ -31,7 +31,7 @@ function checkAnswer(question, userAnswer) {
       return correct.length === given.length && correct.every((v, i) => v === given[i]);
     }
     case 'fill-blank': {
-      const accepted = question.accept ?? [question.answer];
+      const accepted = [question.answer, ...(question.accept ?? [])];
       return accepted.some((a) => a.toLowerCase() === userAnswer.toLowerCase());
     }
     case 'matching':
