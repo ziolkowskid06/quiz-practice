@@ -193,19 +193,19 @@ export default function QuizRunner({ quiz, backHref }) {
       <p className="text-lg font-medium text-gray-100 mb-4">{current.question}</p>
 
       {current.type === 'true-false' && (
-        <TrueFalse question={current} onSubmit={handleAnswer} submitted={!!feedback} />
+        <TrueFalse key={current.id} question={current} onSubmit={handleAnswer} submitted={!!feedback} />
       )}
       {current.type === 'multiple-choice' && (
-        <MultipleChoice question={current} onSubmit={handleAnswer} submitted={!!feedback} />
+        <MultipleChoice key={current.id} question={current} onSubmit={handleAnswer} submitted={!!feedback} />
       )}
       {current.type === 'select-all' && (
-        <SelectAll question={current} onSubmit={handleAnswer} submitted={!!feedback} />
+        <SelectAll key={current.id} question={current} onSubmit={handleAnswer} submitted={!!feedback} />
       )}
       {current.type === 'fill-blank' && (
-        <FillBlank question={current} onSubmit={handleAnswer} submitted={!!feedback} />
+        <FillBlank key={current.id} question={current} onSubmit={handleAnswer} submitted={!!feedback} />
       )}
       {current.type === 'matching' && (
-        <Matching question={current} onSubmit={handleAnswer} submitted={!!feedback} />
+        <Matching key={current.id} question={current} onSubmit={handleAnswer} submitted={!!feedback} />
       )}
 
       {feedback && (
