@@ -35,12 +35,17 @@ questions:
 
 ## YAML string rules
 
-All string values must be wrapped in double quotes (`"`). Inside a double-quoted YAML string:
+The file must be saved as plain **UTF-8, no BOM**.
+
+All free-text string values (`title`, `topic`, `description`, `question`, `answer`, `explanation`, `options`, `accept`, `left`/`right`, etc.) must be wrapped in double quotes (`"`). The `type` field and `id` numbers are the only exceptions — they are written bare (`type: multiple-choice`, `id: 1`), not quoted.
+
+Inside a double-quoted YAML string:
 
 - **Do not use backslash escapes** — `\'`, `\%`, `\$` are invalid and will crash the build. Write the character as-is instead.
 - **Apostrophes are fine unescaped** — write `"don't"`, not `"don\'t"`
 - **Double quotes inside a string must be escaped** — write `\"` or reword to avoid them
 - **Math-style notation** (`$EV / AC$`, `$-25%$`) renders as plain text — the app does not render LaTeX
+- **Use straight ASCII punctuation only** — `'` (U+0027) for apostrophes and `"` (U+0022) for quotes, never typographic/smart quotes (`’ ‘ “ ”`). Use a plain hyphen `-` rather than an en dash (`–`) or em dash (`—`). Many AI tools default to "smart" typography — explicitly override that when generating this content, since curly characters are visually identical to straight ones in most editors and are easy to miss.
 
 ---
 
